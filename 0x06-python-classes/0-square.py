@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""module."""
+"""define clqss square."""
 
 class Square:
-    """Square."""
+    """define Square."""
     pass
