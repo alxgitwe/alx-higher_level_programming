@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Square module class."""
+
+"""class Square."""
+
 
 class Square:
-    """Square class."""
+    """a square."""
+
     def __init__(self, size):
-        """constructor"""
+        """new Square."""
         self.__size = size
