@@ -61,6 +61,11 @@ class Rectangle:
             return (rect_1)
         return (rect_2)
 
+    @classmethod
+    def square(cls, size=0):
+        """Rectangle"""
+        return (cls(size, size))
+
     def __str__(self):
         """representation Rectangle"""
         if self.__width == 0 or self.__height == 0:
