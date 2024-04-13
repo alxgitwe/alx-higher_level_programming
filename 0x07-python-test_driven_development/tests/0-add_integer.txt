@@ -1,1 +1,25 @@
-test
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test :
+
+    >>> 1
+
+Test :
+
+    >>> 2
+
+Test :
+
+    >>> 3
+
+Test :
+
+    >>> 4
