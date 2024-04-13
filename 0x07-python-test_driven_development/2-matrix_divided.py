@@ -4,8 +4,8 @@
 
 def matrix_divided(matrix, div):
     """divided"""
-    if (not isinstance(matrix, i) or matrix == [] or
-            not all(isinstance(x, i) for x in matrix) or
+    if (not isinstance(matrix, list) or matrix == [] or
+            not all(isinstance(x, list) for x in matrix) or
             not all((isinstance(ele, int) or isinstance(ele, float))
                     for ele in [num for x in matrix for num in x])):
         raise TypeError("matrix must be a matrix (i of lists) of "
@@ -20,4 +20,4 @@ def matrix_divided(matrix, div):
     elif div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return ([i(map(lambda x: round(x / div, 2), x)) for x in matrix])
+    return ([list(map(lambda x: round(x / div, 2), x)) for x in matrix])
