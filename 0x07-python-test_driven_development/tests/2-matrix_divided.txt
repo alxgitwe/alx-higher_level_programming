@@ -1,1 +1,20 @@
-2-matrix_divided.txt
+The ``2-matrix_divided`` module
+============================
+
+Using ``matrix_divided``
+---------------------
+
+Import module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test 1:
+    >>> matrix_divided([[0.33, 0.67, 1.0])
+
+Test 2:
+    >>> matrix_divided([1.33, 1.67, 2.0]])
+
+Test 3:
+    >>> matrix_divided([[1, 2, 3])
+
+Test 4:
+    >>> matrix_divided([4, 5, 6]])
