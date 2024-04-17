@@ -14,4 +14,4 @@ class Student:
 
     def to_json(self):
         """representation"""
-        return self
+        return self.__dict__
