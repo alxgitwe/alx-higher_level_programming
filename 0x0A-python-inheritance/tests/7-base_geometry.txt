@@ -1,0 +1,32 @@
+Importing the class:
+>>> from 7-base_geometry import BaseGeometry
+Checking if the class type is correct:
+>>> bg = BaseGeometry()
+>>> type(bg) is BaseGeometry
+True
+Checking if the area method is an instance method:
+>>> type(BaseGeometry.area)
+<class 'function'>
+Testing the area method with no arguments:
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+Testing the area method with one argument:
+>>> bg.area(10)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+Testing the area method with no arguments via the class:
+>>> bg.class.area()
+Traceback (most recent call last):
+TypeError: area() missing 1 required positional argument: 'self'
+Checking if the integer_validator method is an instance method:
+>>> type(BaseGeometry.integer_validator)
+<class 'function'>
+Testing the integer_validator method with no arguments via the class:
+>>> bg.class.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+Testing the integer_validator method with the wrong number of arguments:
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
