@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoni3
+"""module"""
 from models.base import Base
 
 
@@ -15,7 +16,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """rectangle"""
+        """width rectangle"""
         return self.__width
 
     @width.setter
@@ -25,7 +26,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """rectangle"""
+        """height rectangle"""
         return self.__height
 
     @height.setter
@@ -35,7 +36,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """rectangle"""
+        """x rectangle"""
         return self.__x
 
     @x.setter
@@ -45,7 +46,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """rectangle"""
+        """y rectangle"""
         return self.__y
 
     @y.setter
@@ -54,7 +55,7 @@ class Rectangle(Base):
         self.__y = value
 
     def validate_integer(self, name, value, eq=True):
-        """rectangle"""
+        """validate_intege rectangle"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if eq and value < 0:
