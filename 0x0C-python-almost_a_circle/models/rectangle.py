@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-'''Module for Rectangle class.'''
+"""module class"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    '''A Rectangle class.'''
+    """class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Constructor.'''
+        """constructor"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,7 +16,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''Width of this rectangle.'''
+        """rectangle"""
         return self.__width
 
     @width.setter
@@ -26,7 +26,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        '''Height of this rectangle.'''
+        """rectangle"""
         return self.__height
 
     @height.setter
@@ -36,7 +36,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        '''x of this rectangle.'''
+        """rectangle"""
         return self.__x
 
     @x.setter
@@ -46,7 +46,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        '''y of this rectangle.'''
+        """rectangle"""
         return self.__y
 
     @y.setter
@@ -55,7 +55,7 @@ class Rectangle(Base):
         self.__y = value
 
     def validate_integer(self, name, value, eq=True):
-        '''Method for validating the value.'''
+        """method validating"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if eq and value < 0:
