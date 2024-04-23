@@ -1,12 +1,12 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 from models.base import Base
 
 
 class Rectangle(Base):
-    """"class"""
+    """class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """"class"""
+        '''Constructor.'''
         super().__init__(id)
         self.width = width
         self.height = height
@@ -15,7 +15,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """"class"""
+        """rectangle"""
         return self.__width
 
     @width.setter
@@ -25,7 +25,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """"class"""
+        """rectangle"""
         return self.__height
 
     @height.setter
@@ -35,7 +35,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """"class"""
+        """rectangle"""
         return self.__x
 
     @x.setter
@@ -45,7 +45,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """"class"""
+        """rectangle"""
         return self.__y
 
     @y.setter
