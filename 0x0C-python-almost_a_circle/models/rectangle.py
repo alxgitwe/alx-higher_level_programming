@@ -1,14 +1,13 @@
 #!/bin/usr/python3
-"""Rectangle"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle"""
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Rectangle"""
-        super().__init__(id)
+    """"class"""
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """"class"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -16,57 +15,49 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Rectangle"""
+        """"class"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Rectangle"""
-        if not isinstance(value, int) or isinstance(value, bool):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        self.validate_integer("width", value, False)
         self.__width = value
 
     @property
     def height(self):
-        """Rectangle"""
+        """"class"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Rectangle"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-
+        self.validate_integer("height", value, False)
         self.__height = value
 
     @property
     def x(self):
-        """Rectangle"""
+        """"class"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Rectangle"""
-        if not isinstance(value, int) or isinstance(value, bool):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
+        self.validate_integer("x", value)
         self.__x = value
 
     @property
     def y(self):
-        """Rectangle"""
+        """"class"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Rectangle"""
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
+        self.validate_integer("y", value)
         self.__y = value
+
+    def validate_integer(self, name, value, eq=True):
+        """rectangle"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
