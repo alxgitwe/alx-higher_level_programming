@@ -69,8 +69,7 @@ class Rectangle(Base):
          return area
 
     def display(self):
-         """"rectangle"""
-         s = '\n' * self.y + \
-            (' ' * self.x + '#' * self.width + '\n') * self.height
-        print(s, end='')
-
+        """"rectangle"""
+        s = '\n' * self.y + \
+                (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(s, end="")
