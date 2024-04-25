@@ -70,9 +70,7 @@ class Rectangle(Base):
 
     def display(self):
          """"rectangle"""
-        for i in range(self.y):
-            print()
-
-        for i in range(self.height):
-            print(" " * self.x + "#" * self.width) 
+         s = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(s, end='')
 
