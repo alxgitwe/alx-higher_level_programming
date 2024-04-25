@@ -29,10 +29,17 @@ class Square(Rectangle):
         """update"""
         if id is not None:
             self.id = id
-        if size is not None:
+        elif size is not None:
             self.size = size
-        if x is not None:
+        elif x is not None:
             self.x = x
-        if y is not None:
+        elif y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        """update"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
 
