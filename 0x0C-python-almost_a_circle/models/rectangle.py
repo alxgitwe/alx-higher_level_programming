@@ -73,3 +73,5 @@ class Rectangle(Base):
         s = '\n' * self.y + \
                 (' ' * self.x + '#' * self.width + '\n') * self.height
         print(s, end="")
+
+
