@@ -79,7 +79,7 @@ class Rectangle(Base):
         """__str__"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
-    def __update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """__update"""
         names = ["id", "width", "height", "x", "y"]
         if args and len(args) != 0:
