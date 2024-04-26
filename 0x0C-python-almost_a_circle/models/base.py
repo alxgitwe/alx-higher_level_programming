@@ -39,3 +39,17 @@ class Base:
             list_objs = [x.to_dictionary() for x in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as fle:
             fle.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create"""
+        from models.square import Square
+        from models.rectangle import Rectangle
+        if cls is Rectangle:
+            i = Rectangle(1, 1)
+        elif cls is Square:
+            i = Square(1)
+        else:
+            i = None
+        i.update(**dictionary)
+        return i
