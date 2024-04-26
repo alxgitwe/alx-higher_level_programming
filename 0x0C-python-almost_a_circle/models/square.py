@@ -43,3 +43,7 @@ class Square(Rectangle):
         elif kwargs:
             self.__update(**kwargs)
 
+    def to_dictionary(self):
+        """dictionary"""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
+
