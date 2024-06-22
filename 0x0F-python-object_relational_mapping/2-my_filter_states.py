@@ -1,35 +1,25 @@
 #!/usr/bin/python3
-"""
-    script
-"""
-from sys import argv
+""" Filter States """
 import MySQLdb
+from sys import argv
 
-if __name__ == "__main__":
-    conn = MySQLdb.connect(
-        host="localhost",
+def filter_states():
+    """ Filter states by name """
+    db = MySQLdb.connect(
+        host='localhost',
         port=3306,
         user=argv[1],
         passwd=argv[2],
-        db=argv[3],
-        charset="utf8"
+        db=argv[3]
     )
-    cur = conn.cursor()
-
-    try:
-        search = argv[4]
-        query = f"SELECT * FROM states WHERE name LIKE BINARY '{search}' ORDER BY id ASC"
-        cur.execute(query)
-        results = cur.fetchall()
-
-        for row in results:
-            print(row)
-
-    except MySQLdb.Error:
-        try:
-            print("MySQLdb Error")
-        except IndexError:
-            print("MySQLdb Error - IndexError")
-
+    cur = db.cursor()
+    sql_string = "SELECT * FROM states WHERE name LIKE BINARY %s"
+    cur.execute(sql_string, (argv[4],))
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
-    conn.close()
+    db.close()
+
+if __name__ == "__main__":
+    filter_states()
