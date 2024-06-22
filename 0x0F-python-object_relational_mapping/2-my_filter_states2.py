@@ -21,15 +21,14 @@ if __name__ == "__main__":
         query = f"SELECT * FROM states WHERE name LIKE BINARY '{search}' ORDER BY id ASC"
         cur.execute(query)
         results = cur.fetchall()
-
-        for row in results:
-            print(row)
-
     except MySQLdb.Error:
         try:
-            print("MySQLdb Error")
+            results = ("MySQLdb Error")
         except IndexError:
-            print("MySQLdb Error - IndexError")
+            results = ("MySQLdb Error - IndexError")
+
+    for row in results:
+        print(row)
 
     cur.close()
     conn.close()
