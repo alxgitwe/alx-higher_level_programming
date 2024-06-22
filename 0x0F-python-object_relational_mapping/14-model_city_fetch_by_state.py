@@ -4,6 +4,7 @@
 """
 from sys import argv
 from model_city import Base, City
+from model_state import Base as State_Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
