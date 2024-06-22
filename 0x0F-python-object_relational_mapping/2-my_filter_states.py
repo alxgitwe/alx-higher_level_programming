@@ -1,30 +1,34 @@
 #!/usr/bin/python3
 """
-script
+    script
 """
+from sys import argv
 import MySQLdb
-import sys
 
 if __name__ == "__main__":
-    # Connect
-    db = MySQLdb.connect(
+    conn = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
+        charset="utf8"
     )
+    cur = conn.cursor()
 
-    # Create object
-    cur = db.cursor()
+    try:
+        search = argv[4]
+        query = f"SELECT * FROM states WHERE name LIKE BINARY '{search}' ORDER BY id ASC"
+        cur.execute(query)
+        results = cur.fetchall()
+    except MySQLdb.Error:
+        try:
+            results = ("MySQLdb Error")
+        except IndexError:
+            results = ("MySQLdb Error - IndexError")
 
-    # Execute
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (sys.argv[4],))
-
-    # Fetch
-    for row in cur.fetchall():
+    for row in results:
         print(row)
 
-    # Close
     cur.close()
-    db.close()
+    conn.close()
