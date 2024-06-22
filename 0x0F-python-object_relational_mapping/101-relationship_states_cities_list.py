@@ -4,7 +4,6 @@
 """
 from sys import argv
 from relationship_state import Base, State
-from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -15,13 +14,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    from relationship_city import City
+    states = session.query(State).order_by(State.id).all()
 
-    california = State(name="California")
-    san_francisco = City(name="San Francisco", state=california)
-
-    session.add(california)
-    session.add(san_francisco)
-    session.commit()
-
+    for state in states:
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"    {city.id}: {city.name}")
     session.close()
