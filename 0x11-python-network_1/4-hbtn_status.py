@@ -2,10 +2,8 @@
 """fetches url"""
 import requests
 
-response = requests.get('https://alx-intranet.hbtn.io/status')
-body = response.text
-
-print("Body response:")
-print("\t- type: {}".format(type(body)))
-print("\t- content: {}".format(body))
-
+if __name__ == "__main__":
+    res = requests.get("https://alx-intranet.hbtn.io/status")
+    print("Body response:")
+    print("\t- type: {}".format(type(res.text)))
+    print("\t- content: {}".format(res.text))
