@@ -2,10 +2,15 @@
 """test"""
 
 def find_peak(list_of_integers):
+    """Return a peak in a list of unsorted integers."""
     if not list_of_integers:
         return None
 
-    left, right = 0, len(list_of_integers) - 1
+    n = len(list_of_integers)
+    if n == 1:
+        return list_of_integers[0]
+
+    left, right = 0, n - 1
 
     while left < right:
         mid = (left + right) // 2
