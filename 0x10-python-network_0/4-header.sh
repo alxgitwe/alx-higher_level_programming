@@ -1,3 +1,3 @@
 #!/bin/bash
 # script
-curl -s -H "X-School-User-Id" $1
+curl -sL "$1" -H "X-School-User-Id:98"
