@@ -1,11 +1,11 @@
 #!/usr/bin/node
-const request = require('request');
+const rqst = require('request');
 
-const options = {
+const optns = {
   url: process.argv[2],
   method: 'GET'
 };
-request(options, (err, res, body) => {
+rqst(optns, (err, res, body) => {
   if (err) {
     console.log(err);
   } else {
